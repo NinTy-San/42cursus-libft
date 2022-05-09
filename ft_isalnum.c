@@ -6,7 +6,7 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 15:06:12 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/07 15:34:10 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/09 13:50:25 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_isalnum(int c)
 	return ((ft_isalpha(c) || ft_isdigit(c)));
 }
 
-int	main()
+/*int	main()
 {
 	printf("isalnum = %d", isalnum('a'));
 	printf("ft_isalnum = %d", ft_isalnum('a'));
-}
+}*/

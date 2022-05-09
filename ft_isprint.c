@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 17:29:31 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/08 21:27:08 by adohou           ###   ########.fr       */
+/*   Created: 2022/05/08 21:05:57 by adohou            #+#    #+#             */
+/*   Updated: 2022/05/08 21:07:27 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_strlen(char c);
-#endif
+int	ft_isprint(int c)
+{
+	return (c >= 32 && <= 127);
+}
