@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 13:33:29 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/10 14:46:06 by adohou           ###   ########.fr       */
+/*   Created: 2022/05/09 17:11:56 by adohou            #+#    #+#             */
+/*   Updated: 2022/05/10 16:49:12 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
+	char	*dst;
+	char	*sc;
+	size_t	i;
 
+	dst = (char *) dest;
+	sc = (char *) src;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && (s1[i] || s2[i]) && i < n -1)
+	while (sc[i] && i < n)
 	{
+		dst[i] = sc[i];
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	if (n)
+		dst[i] = '\0';
+	return ((void *)dst);
 }
 
-/*int	main()
+/*int	main ()
 {
-	char s1[] = "it's all good";
-	char s2[] = "it'z all good";
-
-	printf("\n strncmp = %d", strncmp(s1, s2, 7));
-	printf("\n strncmp = %d", ft_strncmp(s1, s2, 7));
+	const char src[50] = "it's all good";
+   	char dest[50];
+   
+	strcpy(dest,"Heloooo!!");
+  	 printf("Before memcpy dest = %s\n", dest);
+   	ft_memcpy(dest, src, strlen(src)+1);
+   	printf("After memcpy dest = %s\n", dest);
 }*/

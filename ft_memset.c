@@ -6,7 +6,7 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:08:34 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/09 14:33:59 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/10 14:17:51 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,23 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 		ptr[i++] = c;
-	return (ptr);
+	return ((void *) ptr);
 }
 
 /*int     main()
 {
-        char str[] = "it was all a dream";  
-
-      printf("\n memset() =    %p", memset(str, '?', 3));        
-      printf("\n ft_memset() = %p \n", ft_memset(str, '?', 3));  
+        char s1[] = "it was all a dream";
+        char s2[] = "it was all a dream";
+      	
+	printf("\n s1 befor memset() =    %s", s1);
+	memset(s1, '?', 3);        
+      	printf("\n s1 after memset() =    %s \n", s1);        
+      	printf("\n s2 befor ft_memset() = %s ", s2);  
+	ft_memset(s2, '?', 3);        
+	printf("\n s2 after ft_memset() = %s \n", s2);  
 }*/
 
-/*void ft_bzero(void * s , size_t n    )
-{
-    ft_memset(s,0, n);   
-}
-
-void    ft_putstr_fd(char *str , int fd)
+/*void    ft_putstr_fd(char *str , int fd)
 {
     // int i;
     // i = 0;

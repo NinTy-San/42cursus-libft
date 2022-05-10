@@ -6,18 +6,19 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:16:55 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/05 21:04:34 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/10 15:21:41 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	j;
 	unsigned int	k;
 
 	i = 0;
-	while (dest[i])
+	while (dst[i])
 		i++;
 	j = 0;
 	while (src[j])
@@ -29,10 +30,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	k = 0;
 	while (src[k] && i < (size - 1) && size != 0)
 	{
-		dest[i] = src[k];
+		dst[i] = src[k];
 		i++;
 		k++;
 	}
-	dest[i] = '\0';
+	dst[i] = '\0';
 	return (j);
 }

@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 13:33:29 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/10 14:46:06 by adohou           ###   ########.fr       */
+/*   Created: 2022/05/09 14:38:46 by adohou            #+#    #+#             */
+/*   Updated: 2022/05/10 14:26:57 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && (s1[i] || s2[i]) && i < n -1)
-	{
-		i++;
-	}
-	return (s1[i] - s2[i]);
+	ft_memset(s, 0, n);
 }
 
 /*int	main()
 {
-	char s1[] = "it's all good";
-	char s2[] = "it'z all good";
+	char	s1[] = "abcdef";
+	char	s2[] = "ghijkl";
+	
 
-	printf("\n strncmp = %d", strncmp(s1, s2, 7));
-	printf("\n strncmp = %d", ft_strncmp(s1, s2, 7));
+	printf("\n s1 before bz = %s", s1);
+	bzero(s1, 2);
+	printf("\n s1 after bz = %s", s1);
+	printf("\n s2 before ft_bz = %s", s2);
+	ft_bzero(s2, 2);
+	printf("\n s2 after bz = %s", s2);
 }*/
