@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 13:23:36 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/11 21:48:38 by adohou           ###   ########.fr       */
+/*   Created: 2022/05/11 14:47:47 by adohou            #+#    #+#             */
+/*   Updated: 2022/05/11 16:29:49 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
+	int		slen;
 	char	*str;
 
 	str = (char *) s;
-	while (*str++)
-		if (*str == c)
-			return (str);
+	slen = ft_strlen(str) - 1;
+	if (c == '\0')
+		return ("\0");
+	while (str[slen])
+	{	
+		if (str[slen] == c)
+			return (str + slen);
+		slen--;
+	}
 	return (NULL);
 }
-
-/*int	main()
+/*
+int	main()
 {
-	char	str[] = "abc";
+	char *str = "it was all a dream";
 
-	printf("\n strchr = %s", strchr(str, 'b'));	
-	printf("\n ft_strchr = %s \n", ft_strchr(str, 'b'));	
+	printf("\n strrchr = %s|", strrchr(str,'\0'));
+	printf("\n ft_strrchr = %s| \n", ft_strrchr(str,'\0'));
 }*/

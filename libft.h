@@ -6,7 +6,7 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:29:31 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/09 16:13:31 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/12 18:19:49 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 size_t	ft_strlen(char *s);
 void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 #endif

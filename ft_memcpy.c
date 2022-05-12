@@ -6,38 +6,50 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:11:56 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/10 16:49:12 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/12 16:09:55 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*dst;
-	char	*sc;
-	size_t	i;
+	const char	*sc;
+	char		*dst;
 
-	dst = (char *) dest;
-	sc = (char *) src;
-	i = 0;
-	while (sc[i] && i < n)
-	{
-		dst[i] = sc[i];
-		i++;
-	}
-	if (n)
-		dst[i] = '\0';
-	return ((void *)dst);
+	dst = dest;
+	sc = src;
+	while (n--)
+		*dst++ = *sc++;
+	return (dst);
 }
 
-/*int	main ()
+/*int	main()
 {
-	const char src[50] = "it's all good";
-   	char dest[50];
-   
-	strcpy(dest,"Heloooo!!");
-  	 printf("Before memcpy dest = %s\n", dest);
-   	ft_memcpy(dest, src, strlen(src)+1);
-   	printf("After memcpy dest = %s\n", dest);
+	char src[] = "salut";
+	//char dest[] = "hello";
+  	printf("memcpy = %s| \n", (char *) ft_memcpy(src + 2, src, 4));
+  	//printf("ft_memcpy = %s \n", (char *) ft_memcpy(src + 2, src, 4));
+}*/
+
+/*int main() {
+
+    int array [] = { 54, 85, 20, 63, 21 };
+    int * copy = NULL;
+    int length = sizeof( int ) * 5;
+       
+    // Memory allocation and copy 
+    copy = (int *) malloc( length );
+    memcpy( array + 2, array, length );
+        
+    // Display the copied values 
+    for( length=0; length<5; length++ ) {
+        printf( "%d ", copy[ length ] );
+    }
+    printf( "\n" );
+        
+    free( copy );
+    
+    return EXIT_SUCCESS;
 }*/
