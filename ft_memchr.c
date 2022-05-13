@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 13:23:36 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/13 20:22:20 by adohou           ###   ########.fr       */
+/*   Created: 2022/05/13 19:59:04 by adohou            #+#    #+#             */
+/*   Updated: 2022/05/13 20:24:57 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
+	const char	*str;
 
-	str = (char *) s;
-	while (str)
+	str = s;
+	c = (unsigned int) c;
+	while (str && n--)
 	{
 		if (*str == c)
-			return (str);
+			return ((char *) str);
 		str++;
 	}
 	return (NULL);
 }
 
-/*int	main()
+/*int   main()
 {
-	char	str[] = "abc";
+        char    str[] = "abcefghigkl";
 
-	printf("\n strchr = %s", strchr(str, 'b'));	
-	printf("\n ft_strchr = %s \n", ft_strchr(str, 'b'));	
+        printf("\n strchr = %s", (char *) memchr(str, 'c', 5));     
+        printf("\n ft_strchr = %s \n", (char *) ft_memchr(str, 'c', 55555));    
 }*/
