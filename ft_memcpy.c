@@ -6,7 +6,7 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:11:56 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/14 21:43:10 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/16 19:42:15 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*sc;
 	char		*dst;
 
-	dst = dest;
 	sc = src;
+	dst = dest;
 	while (n--)
 		*dst++ = *sc++;
-	return (dst);
+	return (dest);
 }
 
 /*int	main()
 {
-	char src[] = "salut";
-	char dest[] = "hello";
-  	printf("memcpy = %s| \n", (char *) memcpy(dest, src, 4));
-  	//printf("ft_memcpy = %s \n", (char *) ft_memcpy(src + 2, src, 4));
+	char s1[] = "salut";
+	char d1[] = "hello";
+	char s2[] = "salut";
+	char d2[] = "hello";
+  	printf("memcpy = %s \n", (char *) memcpy(d1, s1, 4));
+  	printf("ft_memcpy = %s \n", (char *) ft_memcpy(d2, s2, 4));
 }*/
 
 /*int main() {
