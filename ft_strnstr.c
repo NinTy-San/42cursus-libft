@@ -6,7 +6,7 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 16:22:17 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/14 17:02:37 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/16 18:01:08 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-int	main()
+/*int	main()
 {
 	const char *largestring = "Foo Bar Baz";
 	const char *smallstring = "Bar";
 
 	printf("ft_strnstr = %s", ft_strnstr(largestring, smallstring, 4));
-}
+}*/
