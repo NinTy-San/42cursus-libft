@@ -6,7 +6,7 @@
 /*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:45:50 by adohou            #+#    #+#             */
-/*   Updated: 2022/05/17 14:38:29 by adohou           ###   ########.fr       */
+/*   Updated: 2022/05/17 21:24:44 by adohou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newstr;
 	int		i;
-
+	
 	if (!s || !len)
 		return (NULL);
 	newstr = malloc(sizeof(char) * len + 1);

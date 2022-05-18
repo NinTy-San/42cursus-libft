@@ -23,7 +23,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 		ptr[i++] = c;
-	return ((void *) ptr);
+	return (ptr);
 }
 
 /*int     main()

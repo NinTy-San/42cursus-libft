@@ -36,7 +36,11 @@ SRC = ft_bzero.c \
     ft_strncmp.c \
     ft_strnstr.c \
     ft_strrchr.c \
-    ft_atoi.c
+    ft_atoi.c \
+    ft_calloc.c \
+    ft_strdup.c \
+    ft_substr.c \
+    ft_strjoin.c
 
 
 
@@ -49,7 +53,7 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $^
+	$(CC) -c $(CFLAGS) $^ -o $@
 
 clean:
 	rm -f $(OBJ)
