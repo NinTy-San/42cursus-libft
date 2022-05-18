@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, const char *s2)
+char	*ft_strjoin(const char  *s1, const char  *s2)
 {
 	char	*newstr;
 	size_t	lens1;
@@ -20,8 +20,8 @@ char	*ft_strjoin(char const *s1, const char *s2)
 	int		i;
 	int		j;
 
-	lens1 = ft_strlen((char *) s1);
-	lens2 = ft_strlen((char *) s2);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
 	newstr = malloc(sizeof(char) * (lens1 + lens2 + 1));
 	if (!newstr)
 		return (NULL);
