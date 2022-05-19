@@ -52,7 +52,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	return (tstr);
 }
 
-/* nt	main()
+/* int	main()
 {
 	printf("trim = %s", ft_strtrim("xyzabcdefxyz", "xyz"));
 } */
