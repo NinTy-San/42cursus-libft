@@ -15,14 +15,16 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const char	*str;
-
+	size_t	i;
 	str = s;
 	c = (unsigned int) c;
-	while (str && n--)
+	i = 0;
+	while (str && i < n)
 	{
 		if (*str == c)
 			return ((char *) str);
 		str++;
+		i++;
 	}
 	return (NULL);
 }
@@ -31,6 +33,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
         char    str[] = "abcefghigkl";
 
-        printf("\n strchr = %s", (char *) memchr(str, 'c', 5));     
-        printf("\n ft_strchr = %s \n", (char *) ft_memchr(str, 'c', 55555));    
+        printf("\n strchr = %s", (char *) memchr(str, 'c', 5));
+        printf("\n ft_strchr = %s \n", (char *) ft_memchr(str, 'c', 55555));
 }*/

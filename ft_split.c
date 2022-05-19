@@ -30,7 +30,7 @@ static int	nb_elem(const char *s, char del)
 	return (elem);
 }
 
-static char	*set_elem(char *str, char c, int *p)
+static char	*set_elem(const char *str, char c, int *p)
 {
 	char	*elem;
 	int	i;
@@ -40,7 +40,7 @@ static char	*set_elem(char *str, char c, int *p)
 	i = 0;
 	j = 0;
 	k = *p;
-	while (!chech_char(str[i], c))
+	while (!chech_char(str[*p], c))
 	{
 		i++;
 		*p = *p + 1;
@@ -57,6 +57,32 @@ char	**ft_split(const char *s, char c)
 {
 	char **splitTab;
 	int	i;
+	int j;
 	int	len;
 
+	len = nb_elem(s, c);
+	splitTab = malloc(sizeof(char *) * len + 1);
+	i = 0;
+	j = 0;
+	while (i < len)
+		splitTab[i++] = set_elem(s, c, &j);
+	splitTab[i] = NULL;
+	return(splitTab);
 }
+/*
+int	main()
+{
+	char	**split;
+	const char	*str;
+	char	del;
+	int	i;
+
+	str = "ouais on est ou ?";
+	del = 'o';
+	i = 0;
+	split = ft_split(str, del);
+	while (i < (nb_elem(str, del)))
+		printf("elem = %s \n", split[i++]);
+	free(split);
+}
+ */
