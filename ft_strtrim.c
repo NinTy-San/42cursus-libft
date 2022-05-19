@@ -12,32 +12,47 @@
 
 #include "libft.h"
 
+static int	check_set(char c, const char *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*tstr;
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
-	while (s1)
+	while (check_set(s1[i], set) || check_set(s1[j], set))
 	{
-		k = 0;
-
-		while (set[k])
-		{
-			if (s1[i] == set[k])
-				i++;
-			if (s1[j] == set[k])
-				j--;
-			k++;
-		}
+		while (check_set(s1[i], set))
+			i++;
+		while (check_set(s1[j], set))
+			j--;
 	}
-
+	tstr = (char *) malloc(sizeof(char) * ((j - i) + 2));
+	if (!tstr)
+		return (NULL);
+	k = 0;
+	while (i <= j)
+		tstr[k++] = s1[i++];
+	tstr[k] = '\0';
+	return (tstr);
 }
 
-int	main()
+/* nt	main()
 {
-	ft_strtrim("xyzabcdefxyz", "xyz");
-}
+	printf("trim = %s", ft_strtrim("xyzabcdefxyz", "xyz"));
+} */
