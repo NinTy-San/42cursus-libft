@@ -20,6 +20,7 @@ char	*ft_strdup(const char *s)
 	slen = ft_strlen((char *) s);
 	dest = (char *)malloc(sizeof (char) * slen + 1);
 	ft_memcpy(dest, s, slen);
+	dest[slen] = '\0';
 	return (dest);
 }
 

@@ -30,11 +30,12 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int	main()
+
+/* int	main()
 {
 	char *str = "it was all a dream";
 
-	printf("\n strrchr = %s|", strrchr(str,'\0'));
-	printf("\n ft_strrchr = %s| \n", ft_strrchr(str,'\0'));
-}*/
+	printf("\n strrchr = %s|", strrchr(str,'i'+256));
+	printf("\n ft_strrchr = %s| \n", ft_strrchr(str,'i'+256));
+}
+ */

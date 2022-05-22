@@ -19,11 +19,11 @@ void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 	p = 0;
 	while (s[p])
 	{
-		(*f) (p, s + p);
+		(*f) (p, (s + p));
 		p++;
 	}
 }
-
+/*
 void test1(unsigned int p, char *s)
 {
 	while (*s)
@@ -36,10 +36,9 @@ void test1(unsigned int p, char *s)
 
 int	main()
 {
-	char *str;
-
-	str = "abcdef";
+	char str[] = { 'B', 'o', 'n', 'j', 'o', 'u', 'r', '\0' };
 	printf("str before iteri = %s", str);
 	ft_striteri(str, test1);
 	printf("str after iteri = %s", str);
 }
+ */
