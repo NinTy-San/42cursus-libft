@@ -12,44 +12,44 @@
 
 #include "libft.h"
 
-static int	check_set(char c, const char *set)
+static int    check_set(char c, const char *set)
 {
-	int	i;
+    int    i;
 
-	i = 0;
-	while (set[i])
-	{
-		if (c == set[i])
-			return (1);
-		i++;
-	}
-	return (0);
+    i = 0;
+    while (set[i])
+    {
+        if (c == set[i] || c == 32)
+            return (1);
+        i++;
+    }
+    return (0);
 }
 
-char	*ft_strtrim(const char *s1, const char *set)
+char    *ft_strtrim(const char *s1, const char *set)
 {
-	char	*tstr;
-	int		i;
-	int		j;
-	int		k;
+    char    *tstr;
+    int        i;
+    int        j;
+    int        k;
 
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	while (check_set(s1[i], set) || check_set(s1[j], set))
-	{
-		while (check_set(s1[i], set))
-			i++;
-		while (check_set(s1[j], set))
-			j--;
-	}
-	tstr = (char *) malloc(sizeof(char) * ((j - i) + 2));
-	if (!tstr)
-		return (NULL);
-	k = 0;
-	while (i <= j)
-		tstr[k++] = s1[i++];
-	tstr[k] = '\0';
-	return (tstr);
+    i = 0;
+    j = strlen(s1) - 1;
+    while (check_set(s1[i], set) || (check_set(s1[j], set) && s1[i] != '\0'))
+    {
+        while (check_set(s1[i], set))
+            i++;
+        while (check_set(s1[j], set) && s1[i] != '\0')
+            j--;
+    }
+    tstr = (char *) malloc(sizeof(char) * ((j + 2 - i)));
+    if (!tstr)
+        return (NULL);
+    k = 0;
+    while (i <= j)
+        tstr[k++] = s1[i++];
+    tstr[k] = '\0';
+    return (tstr);
 }
 
 /* int	main()
