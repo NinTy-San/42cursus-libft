@@ -19,10 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	slenght;
 
 	slenght = ft_strlen(s);
+
 	if (len > slenght - start)
 		len = slenght - start;
-	if (start > slenght - 1)
-		return ("");
+	if (start > slenght)
+		len = 0;
 	newstr = malloc(sizeof(char) * len + 1);
 	if (!newstr)
 		return (NULL);

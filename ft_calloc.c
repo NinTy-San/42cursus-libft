@@ -16,19 +16,19 @@
     void	*ft_calloc(size_t nmemb, size_t size)
     {
         void	*ptr;
-        size_t	mlen;
-
-        mlen = nmemb * size;
+        const size_t	mlen = nmemb * size;
         ptr = malloc(mlen);
+        if (mlen / nmemb != size)
+            return (NULL);
         if (!ptr)
             return (NULL);
         ft_bzero(ptr, mlen);
         return (ptr);
     }
 
-    #include <assert.h>
+    // #include <assert.h>
 
-    #define INT_NUMBER 10
+    // #define INT_NUMBER 10
 
     /* int main() {
 
