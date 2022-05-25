@@ -31,7 +31,7 @@ char    *ft_strtrim(const char *s1, const char *set)
     char    *tstr;
     int        i;
     int        j;
-    int        k;
+        int        k;
 
     i = 0;
     j = strlen(s1) - 1;
