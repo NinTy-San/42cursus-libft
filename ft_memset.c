@@ -30,28 +30,11 @@ void	*ft_memset(void *s, int c, size_t n)
 {
         char s1[] = "it was all a dream";
         char s2[] = "it was all a dream";
-      	
+
 	printf("\n s1 befor memset() =    %s", s1);
-	memset(s1, '?', 3);        
-      	printf("\n s1 after memset() =    %s \n", s1);        
-      	printf("\n s2 befor ft_memset() = %s ", s2);  
-	ft_memset(s2, '?', 3);        
-	printf("\n s2 after ft_memset() = %s \n", s2);  
-}*/
-
-/*void    ft_putstr_fd(char *str , int fd)
-{
-    // int i;
-    // i = 0;
-    // while ( *str++ )
-    // {
-    //     write(fd , str[i] , 1)         ;   
-    // }
-    
-
-    write( fd, str , ft_strlen(str)    );
-
-
-
-
+	memset(s1, '?', 3);
+      	printf("\n s1 after memset() =    %s \n", s1);
+      	printf("\n s2 befor ft_memset() = %s ", s2);
+	ft_memset(s2, '?', 3);
+	printf("\n s2 after ft_memset() = %s \n", s2);
 }*/

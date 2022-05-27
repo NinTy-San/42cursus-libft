@@ -72,6 +72,15 @@ char    **ft_split(const char *s, char c)
     int j;
     int    len;
 
+	if (!s)
+	{
+		splitTab =  malloc (sizeof(char *));
+		splitTab[0] = NULL;
+		// printf("size = %ld \n", sizeof(splitTab));
+		// printf("size = %ld \n", sizeof(char *));
+		// printf("size = %ld \n", sizeof(NULL));
+		return (splitTab);
+	}
     len = nb_elem(s, c);
     splitTab = malloc(sizeof(char *) * (len + 1));
     i = 0;
@@ -82,14 +91,16 @@ char    **ft_split(const char *s, char c)
     return(splitTab);
 }
 
-/* int    main()
+ int    main()
 {
     char    **split;
     int    i;
+	char *z;
 
+	*z = 0;
     i = 0;
-    split = ft_split("tripouille", 0);
+    split = ft_split(z, 0);
     while (split[i])
         printf("elem = %s \n", split[i++]);
     free(split);
-} */
+}
