@@ -33,7 +33,7 @@ static int    nb_elem(const char *s, char del)
             while (chech_char(s[i], del))
                 i++;
             if (s[i])
-            elem++;
+                elem++;
         }
         else
             i++;
@@ -45,11 +45,9 @@ static char    *set_elem(const char *str, char c, int *p)
 {
     char    *elem;
     int    i;
-    int    j;
     int    k;
 
     i = 0;
-    j = 0;
     while (chech_char(str[*p], c))
         *p = *p + 1;
     k = *p;
@@ -58,10 +56,8 @@ static char    *set_elem(const char *str, char c, int *p)
         i++;
         *p = *p + 1;
     }
-    elem = (char *) malloc(sizeof(char) * i + 1);
-    while (j < i)
-        elem[j++] = str[k++];
-    elem[j] = '\0';
+    // elem = (char *) malloc(sizeof(char) * i + 1);
+    elem = ft_substr(str, k, i);
     return (elem);
 }
 
@@ -91,16 +87,14 @@ char    **ft_split(const char *s, char c)
     return(splitTab);
 }
 
- int    main()
+/*  int    main()
 {
     char    **split;
     int    i;
-	char *z;
 
-	*z = 0;
     i = 0;
-    split = ft_split(z, 0);
+    split = ft_split("tripouille  42  ", ' ');
     while (split[i])
         printf("elem = %s \n", split[i++]);
     free(split);
-}
+} */
