@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	intlen(long long int n)
+static size_t	intlen(long n)
 {
 	int	i;
 
@@ -30,11 +30,11 @@ static size_t	intlen(long long int n)
 
 char	*ft_itoa(int n)
 {
-	long long int nb;
+	long nb;
 	char	*str;
 	int	slen;
 
-	nb = (long long int) n;
+	nb = (long ) n;
 	slen = intlen(nb);
 	str = malloc(sizeof(char) * slen + 1);
 	if (!str)

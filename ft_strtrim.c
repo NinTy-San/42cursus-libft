@@ -19,7 +19,7 @@ static int    check_set(char c, const char *set)
     i = 0;
     while (set[i])
     {
-        if (c == set[i] || c == 32)
+        if (c == set[i])
             return (1);
         i++;
     }
@@ -31,15 +31,15 @@ char    *ft_strtrim(const char *s1, const char *set)
     char    *tstr;
     int        i;
     int        j;
-        int        k;
+    int        k;
 
     i = 0;
-    j = strlen(s1) - 1;
-    while (check_set(s1[i], set) || (check_set(s1[j], set) && s1[i] != '\0'))
+    j = ft_strlen(s1) - 1;
+    while (check_set(s1[i], set) || (check_set(s1[j], set) && s1[i]))
     {
         while (check_set(s1[i], set))
             i++;
-        while (check_set(s1[j], set) && s1[i] != '\0')
+        while (check_set(s1[j], set) && s1[i])
             j--;
     }
     tstr = (char *) malloc(sizeof(char) * ((j + 2 - i)));

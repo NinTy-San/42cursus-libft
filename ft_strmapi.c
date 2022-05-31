@@ -32,7 +32,7 @@ char	*ft_strmapi(const char *s, char (*f) (unsigned int, char))
 	return (str);
 }
 
-/* char test1(unsigned int n, char c)
+/*  char test1(unsigned int n, char c)
 {
 	return (n + c);
 }
