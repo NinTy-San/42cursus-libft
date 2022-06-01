@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 static int    chech_char(char c, char d)
 {
@@ -20,28 +21,22 @@ static int    chech_char(char c, char d)
 static int    nb_elem(const char *s, char del)
 {
     int    i;
+    int    j;
     int    elem;
-    // int check;
+
 
     i = 0;
     elem = 0;
-    // check = 0;
-	if (del == 0)
-		elem++;
     while (s[i])
     {
-        if (chech_char(s[i], del))
-        {
-            // check++;
-            while (chech_char(s[i], del))
-                i++;
-            if (s[i])
-                elem++;
-        }
-        else
+        j = 0;
+        while (s[i] && chech_char(s[i], del))
             i++;
-        if (!s[i] && !elem)
+        while (s[i + j] && !chech_char(s[i + j], del))
+            j++;
+        if (j)
             elem++;
+        i += j;
     }
     return (elem);
 }
@@ -61,7 +56,8 @@ static char    *set_elem(const char *str, char c, int *p)
         i++;
         *p += 1;
     }
-    elem = ft_substr(str, k, i);
+        elem = ft_substr(str, k, i);
+
     return (elem);
 }
 

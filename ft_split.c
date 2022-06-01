@@ -20,7 +20,6 @@ int	tabLen(const char *s, char c)
 		i += j;
 	}
 	return (k);
-
 }
 
 void setElem(char **splitedTab, const char *s, char c)
@@ -39,12 +38,7 @@ void setElem(char **splitedTab, const char *s, char c)
 		while (s[i + j] && s[i + j] != c)
 			j++;
 		if (j)
-		{
-			splitedTab[k] = ft_substr(s, i, j);
-			k++;
-		}
-		/* if (!j && !k)
-			splitedTab[k] = malloc(sizeof(char)); */
+			splitedTab[k++] = ft_substr(s, i, j);
 		i += j;
 	}
 	splitedTab[k] = NULL;
@@ -55,12 +49,12 @@ char	**ft_split(const char *s, char c)
 	char	**splitedTab;
 	int		nbElem;
 
-	if (!s)
+/* 	if (!s)
 	{
 		splitedTab =  malloc (sizeof(char *));
 		splitedTab[0] = NULL;
 		return (splitedTab);
-	}
+	} */
 	nbElem = tabLen(s, c);
 	splitedTab = malloc(sizeof(char *) * (nbElem + 1));
 	setElem(splitedTab, s, c);
