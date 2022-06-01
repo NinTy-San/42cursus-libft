@@ -27,12 +27,11 @@ static size_t	intlen(long n)
 	return (i);
 }
 
-
 char	*ft_itoa(int n)
 {
-	long nb;
+	long	nb;
 	char	*str;
-	int	slen;
+	int		slen;
 
 	nb = (long ) n;
 	slen = intlen(nb);
@@ -44,7 +43,7 @@ char	*ft_itoa(int n)
 	{
 		if (nb < 0)
 			nb = -nb;
-		*(str + slen) =  nb % 10 + '0';
+		*(str + slen) = nb % 10 + '0';
 		nb = nb / 10;
 		slen--;
 	}
@@ -53,7 +52,6 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		str[slen] = '0';
 	return (str);
-
 }
 
 /* int	main()

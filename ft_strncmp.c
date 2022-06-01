@@ -21,14 +21,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while (s1[i] == s2[i] && (s1[i] || s2[i]) && i < n -1)
 		i++;
-	return (s1[i] - s2[i]);
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
 
-/*int	main()
+/* int	main()
 {
-	char s1[] = "hello";
-	char s2[] = "hllo";
+	// char s1[] = "hello";
+	// char s2[] = "hllo";
 
-	printf("\n strncmp = %d", strncmp(s1, s2, 7));
-	printf("\n strncmp = %d", ft_strncmp(s1, s2, 7));
-}*/
+	printf("\n strncmp = %d", strncmp("test\200", "test\0", 6));
+	printf("\n strncmp = %d", ft_strncmp("test\200", "test\0", 6));
+} */

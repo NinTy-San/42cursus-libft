@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adohou <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/01 18:39:58 by adohou            #+#    #+#             */
+/*   Updated: 2022/06/01 18:40:03 by adohou           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	tabLen(const char *s, char c)
+int	tab_len(const char *s, char c)
 {
 	int	i;
-	int j;
+	int	j;
 	int	k;
 
 	i = 0;
@@ -22,10 +34,10 @@ int	tabLen(const char *s, char c)
 	return (k);
 }
 
-void setElem(char **splitedTab, const char *s, char c)
+void	set_elem(char **splited_tab, const char *s, char c)
 {
 	int	i;
-	int j;
+	int	j;
 	int	k;
 
 	i = 0;
@@ -38,27 +50,27 @@ void setElem(char **splitedTab, const char *s, char c)
 		while (s[i + j] && s[i + j] != c)
 			j++;
 		if (j)
-			splitedTab[k++] = ft_substr(s, i, j);
+			splited_tab[k++] = ft_substr(s, i, j);
 		i += j;
 	}
-	splitedTab[k] = NULL;
+	splited_tab[k] = NULL;
 }
 
 char	**ft_split(const char *s, char c)
 {
-	char	**splitedTab;
-	int		nbElem;
+	char	**splited_tab;
+	int		nb_elem;
 
 /* 	if (!s)
 	{
-		splitedTab =  malloc (sizeof(char *));
-		splitedTab[0] = NULL;
-		return (splitedTab);
+		splited_tab =  malloc (sizeof(char *));
+		splited_tab[0] = NULL;
+		return (splited_tab);
 	} */
-	nbElem = tabLen(s, c);
-	splitedTab = malloc(sizeof(char *) * (nbElem + 1));
-	setElem(splitedTab, s, c);
-	return (splitedTab);
+	nb_elem = tab_len(s, c);
+	splited_tab = malloc(sizeof(char *) * (nb_elem + 1));
+	set_elem(splited_tab, s, c);
+	return (splited_tab);
 }
 
 /*  int    main()
