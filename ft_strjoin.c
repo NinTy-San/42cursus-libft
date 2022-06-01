@@ -28,7 +28,8 @@ char	*ft_strjoin(const char  *s1, const char  *s2)
 	i = 0;
 	j = 0;
 	while (lens1--)
-		*(newstr + (j + 1)) = *(s1 + (j + 1));
+		*(newstr + j++) = *(s1 + i++);
+	i = 0;
 	while (lens2--)
 		*(newstr + j++) = *(s2 + i++);
 	*(newstr + j) = '\0';
