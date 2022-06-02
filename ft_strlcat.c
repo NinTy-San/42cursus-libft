@@ -33,3 +33,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dlen] = '\0';
 	return (slen);
 }
+
+int	main()
+{
+	char	*dest;
+
+	memset(dest, 'r', 15);
+	printf("len = %d" ft_strlcat());
+
+}
