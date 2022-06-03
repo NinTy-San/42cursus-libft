@@ -18,8 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
     size_t	mlen;
 
     mlen = nmemb * size;
-    if (nmemb > sizeof(size_t) / size)
-            return (NULL);
 	if (!nmemb && !size)
             return (NULL);
     ptr = malloc(mlen);

@@ -30,15 +30,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dlen++;
 		i++;
 	}
-	dst[dlen] = '\0';
+	if (size != 0 && size >= dlen)
+		dst[dlen] = '\0';
 	return (slen);
 }
 
-int	main()
+/* int	main()
 {
 	char	*dest;
 
+	dest =  "";
 	memset(dest, 'r', 15);
-	printf("len = %d" ft_strlcat());
-
-}
+	printf("len = %ld", ft_strlcat(dest,"lorem ipsum dolor sit amet", 15));
+} */
