@@ -6,8 +6,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!(*lst))
 		(*lst) = new;
-	tmp = ft_lstlast((*lst));
-	tmp->next = new;
-	tmp = tmp->next;
-	tmp->next = NULL;
+	else
+	{
+		tmp = ft_lstlast((*lst));
+		tmp->next = new;
+
+	}
 }

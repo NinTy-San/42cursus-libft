@@ -11,7 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+void	free_tab(char **tab)
+{
+	int 	i;
 
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return ;
+}
 int	tab_len(const char *s, char c)
 {
 	int	i;
@@ -50,7 +62,12 @@ void	set_elem(char **splited_tab, const char *s, char c)
 		while (s[i + j] && s[i + j] != c)
 			j++;
 		if (j)
-			splited_tab[k++] = ft_substr(s, i, j);
+		{
+			splited_tab[k] = ft_substr(s, i, j);
+			if (!splited_tab[k])
+				free_tab(splited_tab);
+			k++;
+		}
 		i += j;
 	}
 	splited_tab[k] = NULL;

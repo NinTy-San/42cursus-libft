@@ -18,11 +18,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
     size_t	mlen;
 
     mlen = nmemb * size;
-	if (!nmemb && !size)
+	if (nmemb && mlen / nmemb != size)
             return (NULL);
     ptr = malloc(mlen);
-        if (!ptr)
-    return (NULL);
-        ft_bzero(ptr, mlen);
+    if (!ptr)
+        return (NULL);
+    ft_bzero(ptr, mlen);
     return (ptr);
 }
