@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	free_tab(char **tab)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	while (tab[i])
@@ -24,6 +25,7 @@ void	free_tab(char **tab)
 	free(tab);
 	return ;
 }
+
 int	tab_len(const char *s, char c)
 {
 	int	i;
@@ -78,12 +80,6 @@ char	**ft_split(const char *s, char c)
 	char	**splited_tab;
 	int		nb_elem;
 
-/* 	if (!s)
-	{
-		splited_tab =  malloc (sizeof(char *));
-		splited_tab[0] = NULL;
-		return (splited_tab);
-	} */
 	nb_elem = tab_len(s, c);
 	splited_tab = malloc(sizeof(char *) * (nb_elem + 1));
 	set_elem(splited_tab, s, c);
